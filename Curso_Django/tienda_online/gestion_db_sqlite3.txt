@@ -1,0 +1,40 @@
+django-admin startproject tienda_online     ### CREA EL PROYECTO
+
+cd tienda_online
+python manage.py startapp gestion_pedidos
+
+### HAY QUE CREAR EL DISEÑO DE LA BASE DE DATOS (TABLAS Y CAMPOS) EN MODELS.PY
+
+python manage.py check gestion_pedidos ### COMPRUEBA QUE EL MODELO FUNCIONA BIEN
+python manage.py makemigrations ### CREA LA BASE DE DATOS VACÍA
+
+python manage.py sqlmigrate gestion_pedidos 0001
+### CREA Y GUARDA LAS TABLAS NNNN = NÚMERO DE LA MIGRACIÓN PARA CONTROL
+
+python manage.py migrate ### CONFIGURA EL PROYECTO INCLUYENDO LA BASE DE DATOS
+python manage.py shell   ### ABRIR EL SHELL DESDE DIRECTORIO MANAGE.PY
+
+>>> from gestion_pedidos.models import Articulo
+### IMPORTAR ARTÍCULOS
+
+>>> art=Articulo(nombre='mesa', seccion='decoración', precio=90)
+>>> art.save()
+>>> art2=Articulo(nombre='camisa', seccion='confección', precio=75)
+>>> art.save()
+>>> art3=Articulo(nombre='taladro', seccion='bricolaje', precio=150)
+>>> art3.save()
+### CREAR Y GUARDAR ARTÍCULO
+
+>>> art.precio=95
+>>> art.save()
+### MODIFICAR Y GUARDAR CAMPO
+
+>>> art4=Articulo.objects.get(id=2)
+>>> art4.delete()
+(1, {'gestion_pedidos.Articulo': 1})
+>>> Lista=Articulo.objects.all()
+>>> Lista
+<QuerySet [<Articulo: Articulo object (1)>, <Articulo: Articulo object (3)>]>
+>>> Lista.query.__str__()
+'SELECT "gestion_pedidos_articulo"."id", "gestion_pedidos_articulo"."nombre", "gestion_pedidos_articulo"."seccion", "gestion_pedidos_articulo"."precio" FROM "gestion_pedidos_articulo"'
+### MUESTRA LA INSTRUCCION SQL EMPLEADA PARA SACAR ESA LISTA

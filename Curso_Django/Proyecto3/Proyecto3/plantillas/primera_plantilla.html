@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+<body>
+
+  {% include "superior/barra.html" %}
+
+
+  <h2 style="color: blue">Hola Mundo.2 </h2>
+  <h1>Primera PLANTILLA con django.</h1>
+
+  Pruebas de texto.<br>
+  Las llamádas a métodos en plantillas no necesitan los paréntesis vacíos para argumentos.
+
+  <p>El nombre del programador es: {{nombre_persona.capitalize}} {{apellido_persona.capitalize}}</p>
+
+  {% if nombre_persona == 'Arturo' %}
+    <p>Este programador es el titular</p>
+
+  {% else %}
+    <p>Este programador es un suplente</p>
+  {% endif %}
+
+  <p>Estamos a {{momento_actual.day}} de {{momento_actual.month}} del {{momento_actual.year}}.</p>
+  <p>La hora actual es {{momento_actual.time}}.</p>
+  <p><strong>Temas del curso:</strong></p>
+  <p>
+      <ul>
+        {# COMENTARIO #}
+        {% comment %}
+          Comentario de
+          varias lineas
+        {% endcomment %}
+
+
+        {% if temas %}
+          {% for cada_tema in temas %}
+              {% comment %}
+              <li>{{cada_tema|first|lower}}</li>
+              {% endcomment %}
+              <li>{{cada_tema}}</li>
+          {% endfor %}
+        {% else %}
+          <p>No hay elementos que mostrar</p>
+        {% endif %}
+    <ul>
+  </p>
+
+<body>
+<html>
