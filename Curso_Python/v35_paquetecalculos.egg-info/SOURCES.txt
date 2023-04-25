@@ -1,0 +1,9 @@
+v36_setup.py
+v35_calculos/__init__.py
+v35_calculos/v35_calculos_generales.py
+v35_calculos/v35_redondeo_potencia/__init__.py
+v35_calculos/v35_redondeo_potencia/v35_redondeo_potencia.py
+v35_paquetecalculos.egg-info/PKG-INFO
+v35_paquetecalculos.egg-info/SOURCES.txt
+v35_paquetecalculos.egg-info/dependency_links.txt
+v35_paquetecalculos.egg-info/top_level.txt
