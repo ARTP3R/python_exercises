@@ -1,0 +1,63 @@
+LINEAS EN BASH (FUNCIONA EN LINUX Y EN WINDOWS) 
+
+-$ python3 v36_setup.py sdist
+
+(desde la carpeta donde está v36_setup.py)
+
+Resultado:
+ 
+running sdist
+running egg_info
+writing v35_paquetecalculos.egg-info/PKG-INFO
+writing dependency_links to v35_paquetecalculos.egg-info/dependency_links.txt
+writing top-level names to v35_paquetecalculos.egg-info/top_level.txt
+reading manifest file 'v35_paquetecalculos.egg-info/SOURCES.txt'
+writing manifest file 'v35_paquetecalculos.egg-info/SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+warning: check: missing meta-data: if 'author' supplied, 'author_email' must be supplied too
+
+creating v35_paquetecalculos-1.0
+creating v35_paquetecalculos-1.0/v35_calculos
+creating v35_paquetecalculos-1.0/v35_calculos/v35_redondeo_potencia
+creating v35_paquetecalculos-1.0/v35_paquetecalculos.egg-info
+copying files to v35_paquetecalculos-1.0...
+copying v36_setup.py -> v35_paquetecalculos-1.0
+copying v35_calculos/__init__.py -> v35_paquetecalculos-1.0/v35_calculos
+copying v35_calculos/v35_calculos_generales.py -> v35_paquetecalculos-1.0/v35_calculos
+copying v35_calculos/v35_redondeo_potencia/__init__.py -> v35_paquetecalculos-1.0/v35_calculos/v35_redondeo_potencia
+copying v35_calculos/v35_redondeo_potencia/v35_redondeo_potencia.py -> v35_paquetecalculos-1.0/v35_calculos/v35_redondeo_potencia
+copying v35_paquetecalculos.egg-info/PKG-INFO -> v35_paquetecalculos-1.0/v35_paquetecalculos.egg-info
+copying v35_paquetecalculos.egg-info/SOURCES.txt -> v35_paquetecalculos-1.0/v35_paquetecalculos.egg-info
+copying v35_paquetecalculos.egg-info/dependency_links.txt -> v35_paquetecalculos-1.0/v35_paquetecalculos.egg-info
+copying v35_paquetecalculos.egg-info/top_level.txt -> v35_paquetecalculos-1.0/v35_paquetecalculos.egg-info
+Writing v35_paquetecalculos-1.0/setup.cfg
+Creating tar archive
+removing 'v35_paquetecalculos-1.0' (and everything under it)
+
+/dist$ pip3 install v35_paquetecalculos-1.0.tar.gz
+
+Resultado:
+
+Processing ./v35_paquetecalculos-1.0.tar.gz
+Building wheels for collected packages: v35-paquetecalculos
+  Running setup.py bdist_wheel for v35-paquetecalculos ... done
+  Stored in directory: /home/arturo/.cache/pip/wheels/af/36/12/f1f514cfd6e7d6481bcad77be8e22764269b2c52d5c76824e5
+Successfully built v35-paquetecalculos
+Installing collected packages: v35-paquetecalculos
+Successfully installed v35-paquetecalculos-1.0
+
+
+
+/dist$ pip3 uninstall v35_paquetecalculos
+
+Resultado:
+
+Uninstalling v35-paquetecalculos-1.0:
+  Would remove:
+    /home/arturo/.local/lib/python3.7/site-packages/v35_calculos/*
+    /home/arturo/.local/lib/python3.7/site-packages/v35_paquetecalculos-1.0.dist-info/*
+Proceed (y/n)? y
+  Successfully uninstalled v35-paquetecalculos-1.0
+  
