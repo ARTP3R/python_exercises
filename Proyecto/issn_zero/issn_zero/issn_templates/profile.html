@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %} Perfil {% endblock %}</title>
+  </head>
+    <body>
+      {% block content %}
+
+      <h3>Perfil de usuario</h3>
+
+
+      <h1>{{nombre_profile.capitalize}} "{{nick_profile.lower}}"</h1>
+      <h3>{{titulo_profile}}</h3>
+      <h5>Contacto: {{email_profile}}</h5>
+      <h4>Dijo una vez: "{{quote_profile}}" y se quedó tan ancho.</h4>
+      <h6>Le ha pasado todo esto:<br>
+        {{bio_profile}}</h6>
+      <h5>Tiene estos objetos:
+        <ul>
+
+          {% if inventario_profile %}
+            {% for cada_objeto in inventario_profile %}
+                <li>{{cada_objeto.capitalize}}</li>
+            {% endfor %}
+          {% else %}
+            <p>No hay elementos que mostrar</p>
+          {% endif %}
+        <ul>
+      </h5>
+      <p>
+        Saldo en créditos interestelares: {{saldo_isc_profile}}<br>
+        {{privacidad_profile}}<br>
+        {{config_profile}}<br>
+        {{momento_actual}}<br>
+        {{demas_datos}}<br>
+      </p>
+
+      <p><strong>Universos disponibles:</strong></p>
+      <p>
+          <ul>
+
+            {% if demas_datos %}
+              {% for cada_dato in demas_datos %}
+                  <li>{{cada_dato}}</li>
+              {% endfor %}
+            {% else %}
+              <p>No hay elementos que mostrar</p>
+            {% endif %}
+        <ul>
+      </p>
+
+
+
+  {# MUESTRA EL DICCIONARIO todos_los_datos #}
+  <p>Todos los datos del diccionario:<br>
+      <ul>
+
+        {% if todos_los_datos %}
+          {% for cada_dato in todos_los_datos %}
+              <li>{{cada_dato}}</li>
+          {% endfor %}
+        {% else %}
+          <p>No hay elementos que mostrar</p>
+        {% endif %}
+    <ul>
+  </p>
+
+
+      {% endblock %}
+
+    </body>
+  </html>

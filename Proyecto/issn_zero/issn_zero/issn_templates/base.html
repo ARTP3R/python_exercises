@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+
+      {% block title %}  {% endblock %}
+
+    </title>
+  </head>
+
+
+
+
+  <body>
+    <h1 style="background-color:darkblue;color:white;text-align:center">ISSN Zero</h1>
+
+    {% include "superior/barra_nav.html" %}
+
+    <h3>Red social en pruebas</h3>
+
+    <p>Estamos a {{momento_actual.day}} de {{momento_actual.month}} del {{momento_actual.year}}. La hora actual es {{momento_actual.time}} (GMT)</p>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <p style="background-color:blue;color:white;text-align:right">ISSN Zero - Arturo Pérez 2021 (O.G.T.)</p>
+
+
+  </body>
+</html>
